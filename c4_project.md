@@ -225,6 +225,7 @@ const Navbar = () => {
 export default Navbar
 ```
 this enables us to import the image as a javascript object into our component hence setting the src attribute of our img tag to the object: {logo} and our alt attribute to 'logo-image'.
+
 **Step 25**
 --Within the menu-items div append a sibling div with className button-group and within this div append two button tags with classNames login and sign-up respectively:
 ```bash
@@ -274,5 +275,14 @@ export default ShortlyLanding
 ```
 **STYLING THE NAVBAR COMPONENT**
 --
+**Step 27**
+--Inside the styles folder create a CSS Module Stylesheet with the identity navbar.module.css.
+
+**Step 28**
+--Inside the Navbar.jsx file import the CSS Module Stylesheet with the following import statement: 
+```bash
+	import styles from '../styles/navbar.module.css'
+```
+
 
 
