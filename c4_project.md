@@ -1,4 +1,5 @@
-**
+
+PROJECT MOCK DESIGN
 ![desktop-active-states](https://github.com/KwameGH22/StepByStepCodeExecution/assets/111309120/47271f23-e5a5-485c-b94d-f80dec4a97a0)
 **
 **
@@ -196,10 +197,10 @@ const Navbar = () => {
 export default Navbar
 ```
 **Step 24**
---To import the logo image into our Navbar component, first establish the correct file path to the image as this is required to import the image into our Navbar module (component); the Navbar.jsx file is located in the components folder: components/Navbar.jsx. Meanwhile the logo.svg file is located in the images folder which is also located in the assets folder: assets/images/logo.svg. So to import the image file into the component we need to step out of the components folder by ./. the final import path then becomes ./assets/images/logo.svg.: 
+--To import the logo image into our Navbar component, first establish the correct file path to the image as this is required to import the image into our Navbar module (component); the Navbar.jsx file is located in the components folder: components/Navbar.jsx. Meanwhile the logo.svg file is located in the images folder which is also located in the assets folder: assets/images/logo.svg. So to import the image file into the component we need to step out of the file and then the components folder by ../. The final import path then becomes ../assets/images/logo.svg.: 
 ```bash
 import React from 'react';
-import logo from './assets/images/logo.svg'; //step 24
+import logo from '../assets/images/logo.svg'; //step 24
 
 
 const Navbar = () => {
@@ -256,10 +257,10 @@ const Navbar = () => {
 export default Navbar
 ```
 **Step 26**
---Navigate the project file structure to the component folder then into the Shortlylanding.jsx file and run the rafce code snippet to generate the functional component boilerplate. After the return keyword and with the parent div append Navbar JSX component tag:
+--Navigate the project file structure to the component folder then into the <code>Shortlylanding.jsx</code> file and run the rafce code snippet to generate the functional component boilerplate. After the return keyword and with the parent div append <code>Navbar JSX component tag</code>. NOTE that the addition of the <code>JSX component tag</code> automatically imports the component at the top of the ShortlyLanding file:
 ```bash
 import React from 'react'
-import Navbar from './Navbar'
+import Navbar from './Navbar'//note 1
 
 const ShortlyLanding = () => {
   return (
@@ -271,3 +272,7 @@ const ShortlyLanding = () => {
 
 export default ShortlyLanding
 ```
+**STYLING THE NAVBAR COMPONENT**
+--
+
+
