@@ -283,6 +283,11 @@ export default ShortlyLanding
 ```bash
 	import styles from '../styles/navbar.module.css'
 ```
+**Step 29**
+--To apply the styles in the module, all classNames should be referenced as javascript <code>STYLES</code> objects where the classNames are recognized as Object properties: 
+```bash
+	 <div className={styles.navbar-container}>
+```
 
 
 
