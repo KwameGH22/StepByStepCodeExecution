@@ -23,10 +23,16 @@
 --Inside VS Code, and on the menu bar look for the three dots (...) and click to reveal the dropdown options: terminal and help. Hover on the terminal option to reveal new terminal option.
 
 **Step 9**
---Select the new terminal option. Clicking on the new terminal option creates at the bottom the VS Code interface a new terminal with a menu bar.
+--Select the new terminal option. Clicking on the new terminal option creates at the bottom the VS Code interface a new terminal with a menu bar. At the extreme right of the menu bar is located a group of menu icons. Adjacent to the + icon is the drop down icon which upon clicking opens up a menu list containing the GIT BASH option.
 
 **Step 10**
+--Selecting the Git Bash option opens the git bash terminal inside the local assignment project repository.
+
 **Step 11**
+--At the git bash terminal prompt type the command : 
+```bash
+	git clone
+```
 **Step 12**
 
 
