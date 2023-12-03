@@ -96,7 +96,7 @@ root.render(
  --At this point, i have now successfully installed and imported React router into my project; the next step is to use React router to implement routing. The first step is to configure all of my routes (that is, all the pages/components to which we want to navigate).
 
  **Step 00**
- --Route configuration is implemented in the root component of every react application, that is the <code>App.js</code> file. Inside this file import the <code>Router</code> and <code>Route</code> components from the <code>react-router-dom</code> using the statement below:
+ --Route configuration is implemented in the root component of every react application, that is the <code>App.js</code> file. Inside this file import the <code>Routes</code> and <code>Route</code> components from the <code>react-router-dom</code> using the statement below:
  ```bash
 	import { Routes, Route } from 'react-router-dom';
 ```
