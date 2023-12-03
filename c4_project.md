@@ -134,9 +134,9 @@ export default App;
     <div>
        <Routes>
 	   <Route
-		path=''
-		element=''
-	   >
+		path=''  //step 00
+		element=''   //step 00
+	   >//Step 00
        </Route>
 
        </Routes>//Step 00
@@ -149,7 +149,15 @@ export default App;
 
 ```
 **Step 00**
---The <code>path</code> attribute as the name implies identifies the path we want users to take to reach the set component. When we set the path to <code>/about</code>, for example, when the user adds <code>/about</code> to the URL link, it navigates to that page.
+--The <code>path</code> attribute as the name implies identifies the path we want users to take to reach the set component. When we set the path to <code>/about</code>, for example, when the user adds <code>/about</code> to the URL link, it navigates to that page. 
+
+**Step 00**
+--The <code>element</code> attribute contains the component that we want the set path to load. This is simple to understand, but remember to import any components we are using here, or else an error will occur. Like this:
+```bash
+	//App.jsx
+	import { Routes, Route } from 'react-router-dom';//Step 00
+	import ShortlyLanding from './components/ShortlyLanding.jsx'; //step 00
+```
  
 **DESIGN IMPLEMENTATION**
 --
