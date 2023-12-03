@@ -74,6 +74,9 @@ Step 1**
 **Step 17**
 --Inside the components folder create 7 jsx file with the following identities: shortlyLanding.jsx, Navbar.jsx, Forms.jsx, FormDisplay.jsx, Main.jsx, Action.jsx, and Footer.jsx.
 
+**NAVBAR COMPONENT SETUP**
+--
+
 **Step 18**
 --Inside the Navbar.jsx file, run the react snippet "rafce" which stands for react arrow function component export" and hit the return key to generate a boilerplate code of a named (Navbar) functional component block with an export statement: 
 ```bash
