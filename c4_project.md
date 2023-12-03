@@ -98,6 +98,7 @@ root.render(
  **Step 00**
  --Route configuration is implemented in the root component of every react application, that is the <code>App.js</code> file. Inside this file import the <code>Routes</code> and <code>Route</code> components from the <code>react-router-dom</code> using the statement below:
  ```bash
+	//App.js file
 	import { Routes, Route } from 'react-router-dom';
 ```
  
