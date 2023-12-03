@@ -71,8 +71,25 @@ Step 00**
 ```
  and wait for the react-router-dom external library to download and install.
 
+ **CONFIGURING REACT ROUTER IN YOUR PROJECT**
  **Step 00**
- --
+ --After successfully installing the package, I can now set up and configure react-router within my project. To configure React router, navigate to the <code>main.jsx</code> file, which is the root file, and import <code>BrowserRouter</code> from the react-router-dom package that we installed, wrapping it around our <code>App component</code> as follows:
+ ```bash
+	// main.jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';//Step 00
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+ <React.StrictMode>
+    <BrowserRouter>//Step 00
+       <App />
+    </BrowserRouter>//Step 00
+ </React.StrictMode>
+);
+```
  
 **DESIGN IMPLEMENTATION**
 --
