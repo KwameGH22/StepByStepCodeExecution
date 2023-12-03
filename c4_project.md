@@ -6,73 +6,84 @@ PROJECT MOCK DESIGN
 CLONING A GITHUB VITE-REACT APP TO LOCAL MACHINE**
 --
 
-Step 1**
+Step 00**
   --Follow the link to the project assignment GitHub repository provided in teams
 
 	
-**Step 2**
+**Step 00**
 --The link will lead you to the project repository interface on GitHub.
 
-**Step 3**
+**Step 00**
 --At the Project repository interface, look for the <code>fork tab</code> to create a forked branched of the repository.
 
-**Step 4**
+**Step 00**
 --Inside your repository and in the forked C4-project directory, click the code tab to display the project URL.
 
-**Step 5**
+**Step 00**
 --Using the copy icon at the extreme right of the URL copy the URL link to the clipboard.
 
-**Step 6**
+**Step 00**
 --Open VS Code and on the menu button select the file menu option followed by the open folder option from the drop down.
 
-**Step 7**
+**Step 00**
 --Using the windows file explorer dialogue pop-up box select your referred repository and click open in VS code.
 
-**Step 8**
+**Step 00**
 --Inside VS Code, and on the menu bar look for the three dots (...) and click to reveal the dropdown options: terminal and help. Hover on the terminal option to reveal new terminal option.
 
-**Step 9**
+**Step 00**
 --Select the new terminal option. Clicking on the new terminal option creates at the bottom the VS Code interface a new terminal with a menu bar. At the extreme right of the menu bar is located a group of menu icons. Adjacent to the + icon is the drop down icon which upon clicking opens up a menu list containing the GIT BASH option.
 
-**Step 10**
+**Step 00**
 --Selecting the Git Bash option opens the git bash terminal inside the local assignment project repository.
 
-**Step 11**
+**Step 00**
 --At the git bash terminal prompt type the command : 
 ```bash
 	git clone https://github.com/KwameGH22/c4_project.git
 ```
 	and hit the return key and wait for the remote directory files to download to your preferred folder. 
  
-**Step 12**
+**Step 00**
 --At the terminal use the command:
 ```bash
 	cd c4_project
 ```
 	to change into the react-vite project. 
  
-**Step 13**
+**Step 00**
 --To identify whether you are in the right project directory, check for the label (main) at the end of the terminal address.
 
-**Step 14**
+**Step 00**
 --After satisfying that you are in the right directory, run the command:
 ```bash
 	npm install
 ```
 	to install the necessary packages into the react-vite project. 
  
+ **INSTALLING REQUIRED EXTERNAL LIBRARIES**
+ --
+ **REACT ROUTER DOM**
+ **Step 00**
+ --React makes use of an external library to handle routing; however, before we can implement routing with that library, we must first install it in our project, which is accomplished by running the following command in my terminal (within your project directory):
+ ```bash
+	npm install react-router-dom localforage match-sorter sort-by
+```
+ and wait for the react-router-dom external library to download and install.
+
+ **Step 00**
+ --
+ 
 **DESIGN IMPLEMENTATION**
 --
 
  
-**Step 15**
---Inside the src folder create a subfolder and name it components.
+**Step 00**
+--Inside the <code>src</code> folder create three (3) subfolders named components, styles and pages respectively.
 
-**Step 16**
---Inside the src folder create additional subfolders and name them: pages and styles respectively.
 
-**Step 17**
---Inside the components folder create 7 jsx file with the following identities: shortlyLanding.jsx, Navbar.jsx, Forms.jsx, FormDisplay.jsx, Main.jsx, Action.jsx, and Footer.jsx.
+**Step 00**
+--Inside the components folder create 7 jsx files with the following identities: <code>shortlyLanding.jsx</code>, <code>Navbar.jsx</code, <code>Forms.jsx</code>, <code>FormDisplay.jsx</code>, <code>Main.jsx</code>, <code>Action.jsx</code>, and <code>Footer.jsx</code>.
 
 **NAVBAR COMPONENT SETUP**
 --
