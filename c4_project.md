@@ -64,6 +64,7 @@ Step 00**
  **INSTALLING REQUIRED EXTERNAL LIBRARIES**
  --
  **REACT ROUTER DOM**
+ 
  **Step 00**
  --React makes use of an external library to handle routing; however, before we can implement routing with that library, we must first install it in our project, which is accomplished by running the following command in my terminal (within your project directory):
  ```bash
@@ -71,8 +72,9 @@ Step 00**
 ```
  and wait for the react-router-dom external library to download and install.
 
- **SETTING UP REACT ROUTER IN MY PROJECT**
- **Step 00**
+ **SETTING UP REACT-ROUTER IN MY PROJECT**
+ 
+ --**Step 00**
  --After successfully installing the package, I can now set up and configure react-router within my project. To configure React router, navigate to the <code>main.jsx</code> file, which is the root file, and import <code>BrowserRouter</code> from the react-router-dom package that we installed, wrapping it around our <code>App component</code> as follows:
  ```bash
 	// main.jsx
@@ -92,15 +94,62 @@ root.render(
 ```
  **CONFIGURING ROUTES IN MY PROJECT**
  
- **Step 00**
+ --**Step 00**
+ 
  --At this point, i have now successfully installed and imported React router into my project; the next step is to use React router to implement routing. The first step is to configure all of my routes (that is, all the pages/components to which we want to navigate).
 
  **Step 00**
+ 
  --Route configuration is implemented in the root component of every react application, that is the <code>App.js</code> file. Inside this file import the <code>Routes</code> and <code>Route</code> components from the <code>react-router-dom</code> using the statement below:
  ```bash
 	//App.js file
 	import { Routes, Route } from 'react-router-dom';
 ```
+ **Step 00**
+ --in the return block of the App functional component and within the parent div, append the &ltRoutes&gt JSX tag like this:
+  ```bash
+	//App.js file
+	import { Routes, Route } from 'react-router-dom';//Step 00
+
+ 	const App = () => {
+ return (
+    <div>
+       <Routes></Routes>//Step 00
+    </div>
+ );
+};
+
+export default App;
+
+
+```
+ **Step 00**
+ --within the Routes JSX tag nest the various individual route(s) to your pages. Now each <code>Route</code> tag/element possesses two uniques attributes, that is <code>path</code> and <code>element</code> attributes like this:
+   ```bash
+	//App.js file
+	import { Routes, Route } from 'react-router-dom';//Step 00
+
+ 	const App = () => {
+ return (
+    <div>
+       <Routes>
+	   <Route
+		path=''
+		element=''
+	   >
+       </Route>
+
+       </Routes>//Step 00
+    </div>
+ );
+};
+
+export default App;
+
+
+```
+**Step 00**
+--The <code>path</code> attribute as the name implies identifies the path we want users to take to reach the set component. When we set the path to <code>/about</code>, for example, when the user adds <code>/about</code> to the URL link, it navigates to that page.
  
 **DESIGN IMPLEMENTATION**
 --
