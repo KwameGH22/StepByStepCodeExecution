@@ -116,56 +116,89 @@ import App from './App';
  
  --At this point, i have now successfully installed and imported React router into my project; the next step is to use React router to implement routing. The first step is to configure all of my routes (that is, all the pages/components to which we want to navigate).
 
+ **CONFIGURING THE ROOT ROUTE OF MY REACT WEB APP**
+
  **Step 00**
  
- --Route configuration is implemented in the root component of every react application, that is the <code>App.js</code> file. Inside this file import the <code>Routes</code> and <code>Route</code> components from the <code>react-router-dom</code> using the statement below:
+ --The Root route <Root> is configured by setting the first router object's path and elements properties to '/' and '<RootLayout/>' using the statement below:
  ```bash
-	//App.js file
-	import { Routes, Route } from 'react-router-dom';
+	const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout/>,
+  },
+]);
 ```
+
+
+
  **Step 00**
- --in the return block of the App functional component and within the parent div, append the &ltRoutes&gt JSX tag like this:
+ 
+ --Following the creation of the root route, the Rootlayout component is the next to be created. So within the components folder setup a <code>.jsx</code> file with the identity <code>RootLayout.jsx</code>. For my application, the RootLayout component would serve as my Home or Landing page. The RootLayer page will be setup to contain four (4) child components, that is the Navbar, Hero, Content, and the Footer components as illustrated below:
+ 
   ```bash
-	//App.js file
-	import { Routes, Route } from 'react-router-dom';//Step 00
-
- 	const App = () => {
- return (
-    <div>
-       <Routes></Routes>//Step 00
-    </div>
- );
-};
-
-export default App;
+	//RootLayer.js file
+	import React from 'react';
+	import Navbar from './Navbar';
+	import Hero from './Hero';
+	import Content from './Content';
+	import Footer from './Footer';
 
 
+
+	const RootLayout = () => {
+	  return (
+	    <div>
+	        <Navbar/>
+	        <Hero/>
+	        <Content/>
+		<Footer/>
+	    </div>
+	  )
+	}
+
+export default RootLayout;
 ```
+
+ **CONFIGURING THE ERROR ROUTE OF MY REACT WEB APP**
+
  **Step 00**
- --within the Routes JSX tag nest the various individual route(s) to your pages. Now each <code>Route</code> tag/element possesses two uniques attributes, that is <code>path</code> and <code>element</code> attributes like this:
-   ```bash
-	//App.js file
-	import { Routes, Route } from 'react-router-dom';//Step 00
-
- 	const App = () => {
- return (
-    <div>
-       <Routes>
-	   <Route
-		path=''  //step 00
-		element=''   //step 00
-	   >//Step 00
-       </Route>
-
-       </Routes>//Step 00
-    </div>
- );
-};
-
-export default App;
-
-
+ 
+ --The ErrorPage or route is configured by introducing a second element property of the first router object called <code>errorElement</code>using the statement below:
+ ```bash
+	const router = createBrowserRouter([
+  {
+    //First route
+    path: "/",
+    element: <RootLayout/>,
+    errorElement: <ErrorPage/>,  //Step 00
+  },
+]);
 ```
+
+**Step 00**
+ 
+ --Following the creation of the Error route, the ErrorPage component is the next to be created. So within the components folder setup a <code>.jsx</code> file with the identity <code>ErrorPage.jsx</code> and implement the code below which was copied from the react-router tutorial website to handle page not found errors. To set this ErrorPage setup howver would not be possible by first importing the <code>useRouteError</code> Hook from the react-router-dom. The useRouteError hook function is used to create an error object instance whose methods such as the <code>error.statusText</code> and <code>error.message</code> are called in the return statement of the ErrorPage component.
+
+```bash
+import { useRouteError } from "react-router-dom";  //Step 00
+
+export default function ErrorPage() {
+  const error = useRouteError();
+  console.error(error);
+
+  return (
+    <div id="error-page">
+      <h1>Oops!</h1>
+      <p>Sorry, an unexpected error has occurred.</p>
+      <p>
+        <i>{error.statusText || error.message}</i>
+      </p>
+    </div>
+  );
+}
+```
+
 **Step 00**
 --The <code>path</code> attribute as the name implies identifies the path we want users to take to reach the set component. When we set the path to <code>/about</code>, for example, when the user adds <code>/about</code> to the URL link, it navigates to that page. 
 
