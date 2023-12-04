@@ -75,23 +75,41 @@ Step 00**
  **SETTING UP REACT-ROUTER IN MY PROJECT**
  
  --**Step 00**
- --After successfully installing the package, I can now set up and configure react-router within my project. To configure React router, navigate to the <code>main.jsx</code> file, which is the root file, and import <code>BrowserRouter</code> from the react-router-dom package that we installed, wrapping it around our <code>App component</code> as follows:
+ --After successfully installing the package, I can now set up and configure react-router within my project to enable client side routing for my web app. To configure React router, navigate to the <code>main.jsx</code> file, which is the root file, and create and render a <code>BrowserRouter</code>. To create a BrowserRouter first import the <code>createBrowserRouter</code> and <code>RouterProvider</code> components from the react-router-dom package that we installed, as follows:
  ```bash
 	// main.jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';//Step 00
+import { createBrowserRouter, RouterProvider, } from 'react-router-dom';//Step 00
 import App from './App';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
- <React.StrictMode>
-    <BrowserRouter>//Step 00
-       <App />
-    </BrowserRouter>//Step 00
- </React.StrictMode>
+
+```
+--**Step 00**
+
+--To render the <code>BrowserRouter</code> create an instance of the createBrowserRouter function naming it <code>router</code> which takes an array of objects as function parameter. Each object of the array typically contains two properties namely: <code>path:</code> and <code>element:</ccode>. this is as illustrated below:
+
+```bash
+	const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <div>Hello world!</div>,
+  },
+]);
+```
+
+--**Step 00**
+
+--Within React.StrictMode JSX tag of the render method of the ReactDOM component, the <code>RouterProvider</code> component which was imported together with the createBrowser component is called and nested within the RouterProvider component and given the component property <code>router</code> and value of <code>{router}</code> as follows:
+
+```bash
+	ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>Step 00
+    <RouterProvider router={router} />Step 00
+  </React.StrictMode>
 );
 ```
+
  **CONFIGURING ROUTES IN MY PROJECT**
  
  --**Step 00**
