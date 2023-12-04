@@ -164,16 +164,19 @@ export default App;
 
  
 **Step 00**
---Inside the <code>src</code> folder create three (3) subfolders named components, styles and pages respectively.
+
+--Inside the <code>src</code> folder create two (2) subfolders named components, and pages respectively.
 
 
 **Step 00**
---Inside the components folder create 7 jsx files with the following identities: <code>shortlyLanding.jsx</code>, <code>Navbar.jsx</code, <code>Forms.jsx</code>, <code>FormDisplay.jsx</code>, <code>Main.jsx</code>, <code>Action.jsx</code>, and <code>Footer.jsx</code>.
+
+--Inside the components folder create 7 jsx files with the following identities: <code>shortlyLanding.jsx</code>, <code>Navbar.jsx</code, <code>Forms.jsx</code>, <code>FormDisplay.jsx</code>, <code>Main.jsx</code>, <code>Action.jsx</code>, and <code>Footer.jsx</code> and an additional 7 this time around being the CSS versions, i.e <code>shortlyLanding.css</code>, <code>Navbar.css</code, <code>Forms.css</code>, <code>FormDisplay.css</code>, <code>Main.css</code>, <code>Action.css</code>, and <code>Footer.css</code>
 
 **NAVBAR COMPONENT SETUP**
 --
 
 **Step 18**
+
 --Inside the Navbar.jsx file, run the react snippet "rafce" which stands for react arrow function component export" and hit the return key to generate a boilerplate code of a named (Navbar) functional component block with an export statement: 
 ```bash
 	import React from 'react';
@@ -190,6 +193,7 @@ export default Navbar
 ```
 
 **Step 19**
+
 --Give the parent div after the return keyword of the navbar component a className attribute with a value of Navbar-container:
 ```bash
 	import React from 'react';
