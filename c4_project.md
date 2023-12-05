@@ -61,14 +61,14 @@ Step 00**
 ```
 	to install the necessary packages into the react-vite project. 
  
- **INSTALLING REQUIRED EXTERNAL LIBRARIES**
+ **INSTALLING REQUIRED EXTERNAL LIBRARIES AND PLUGINS**
  --
  **REACT ROUTER DOM**
  
  **Step 00**
  --React makes use of an external library to handle routing; however, before we can implement routing with that library, we must first install it in our project, which is accomplished by running the following command in my terminal (within your project directory):
  ```bash
-	npm install react-router-dom localforage match-sorter sort-by
+	npm install react-router-dom 
 ```
  and wait for the react-router-dom external library to download and install.
 
@@ -201,7 +201,39 @@ export default function ErrorPage() {
 
 **Step 00**
 --
- 
+
+**IMPORTING SVG FILES AS REACT COMPONENTS IN MY VITE REACT APP**
+--
+
+**Steo 00**
+--Install the <code>vite-plugin-svgr</code> in your project directory using the following command:
+:
+```bash
+	npm install vite-plugin-svgr
+```
+
+and wait for it to download and install the plugin.
+
+**Step 00**
+--Add the plugin to your vite-config.js file by importing the svgr component and adding it to the object parameter of the <code>defineConfig function</code> like this:
+
+
+```bash
+	import { defineConfig } from 'vite'
+	import react from '@vitejs/plugin-react'
+	import svgr from 'vite-plugin-svgr'   //Step 00
+	
+	// https://vitejs.dev/config/
+	export default defineConfig({
+	  plugins: [react()],
+	  plugins: [svgr()],   //Step 00
+	})
+```
+**Step 00**
+--To actually use the svg file in any component first import it into that component using the statement: 
+
+<code>import { ReactComponent as WhateverIcon } from "./icons/WhateverIcon.svg";</code>
+
 **DESIGN IMPLEMENTATION**
 --
 
