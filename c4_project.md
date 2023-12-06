@@ -264,7 +264,51 @@ and wait for it to download and install the plugin.
 	  plugins: [reactIcons()],   //Step 00
 	})
 ```
-	
+***INSTALLING TAILWINDCSS AND IT'S DEPENDANCIES IN MY VITE-REACT PROJECT***
+**Step 00**
+--Navigate to your project directory and run the command :
+```bash
+	npm install -D tailwindcss postcss autoprefixer
+```
+--and wait for the dowmload and installation to complete.
+
+**Step 00**
+--To generate the tailwindcss configuration files run the command:
+```bash
+	npx tailwindcss init -p
+```
+
+**Step**
+--To configure source paths add all of your template files in your <code>tailwind.config.cjs</code> file. Template files include <code>HTML templates</code>, <code>JavaScript components</code>, and <code>other source files that contain Tailwind class names</code>. This is to make sure that vanilla CSS is generated for the corresponding elements. Find the content of <code>tailwind.config.cjs</code> file below: 
+
+```bash
+	/** @type {import('tailwindcss').Config} */
+export default {
+  content: [],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+```
+
+**Step**
+--Add the template files <code>"./index.html",</code> and <code>"./src/**/*.{js,ts,jsx,tsx}",</code>to the content property of the export default object like this:
+```bash
+	/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
 
 **DESIGN IMPLEMENTATION**
 --
