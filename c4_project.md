@@ -1,9 +1,8 @@
 
 PROJECT MOCK DESIGN
 ![desktop-active-states](https://github.com/KwameGH22/StepByStepCodeExecution/assets/111309120/47271f23-e5a5-485c-b94d-f80dec4a97a0)
-**
-**
-CLONING A GITHUB VITE-REACT APP TO LOCAL MACHINE**
+
+**CLONING A GITHUB VITE-REACT APP TO LOCAL MACHINE**
 --
 
 Step 00**
