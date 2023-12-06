@@ -309,6 +309,14 @@ export default {
 }
 ```
 
+**Step 00**
+--Add the statements below to your ./src/index.css file:
+```bash
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+```
+
 
 **DESIGN IMPLEMENTATION**
 --
