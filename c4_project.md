@@ -230,9 +230,41 @@ and wait for it to download and install the plugin.
 	})
 ```
 **Step 00**
---To actually use the svg file in any component first import it into that component using the statement: 
+--To use the svg file in any component first import it into that component using the statement: 
 
 <code>import { ReactComponent as WhateverIcon } from "./icons/WhateverIcon.svg";</code>
+
+**IMPORTING REACT-ICONS AS REACT COMPONENTS IN MY VITE REACT APP**
+--
+
+**Steo 00**
+--Install the <code>vite-plugin-react-icons</code> in your project directory using the following command:
+:
+```bash
+	npm i -D vite-plugin-react-icons @iconify/json
+```
+
+and wait for it to download and install the plugin.
+
+**Step 00**
+--Add the plugin to your vite-config.js file by importing the <code>reactIcons</code> component and adding it to the object parameter of the <code>defineConfig function</code> like this:
+
+
+```bash
+	import { defineConfig } from 'vite'
+	import react from '@vitejs/plugin-react'
+	import svgr from 'vite-plugin-svgr'
+	import reactIcons from 'vite-plugin-react-icons';  //Step 00
+
+	
+	// https://vitejs.dev/config/
+	export default defineConfig({
+	  plugins: [react()],
+	  plugins: [svgr()],
+	  plugins: [reactIcons()],   //Step 00
+	})
+```
+	
 
 **DESIGN IMPLEMENTATION**
 --
