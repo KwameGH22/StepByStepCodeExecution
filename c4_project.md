@@ -32,7 +32,7 @@ Step 00**
 --Inside VS Code, and on the menu bar look for the three dots (...) and click to reveal the dropdown options: terminal and help. Hover on the terminal option to reveal new terminal option.
 
 **Step 00**
---Select the new terminal option. Clicking on the new terminal option creates at the bottom the VS Code interface a new terminal with a menu bar. At the extreme right of the menu bar is located a group of menu icons. Adjacent to the + icon is the drop down icon which upon clicking opens up a menu list containing the GIT BASH option.
+--Select the new terminal option. Clicking on the new terminal option creates at the bottom the VS Code interface a new terminal with a menu bar. At the extreme right of the menu bar is located a group of menu icons. Adjacent to the + icon is the drop-down icon which upon clicking opens up a menu list containing the GIT BASH option.
 
 **Step 00**
 --Selecting the Git Bash option opens the git bash terminal inside the local assignment project repository.
@@ -75,32 +75,58 @@ Step 00**
  **SETTING UP REACT-ROUTER IN MY PROJECT**
  
  --**Step 00**
- --After successfully installing the package, I can now set up and configure react-router within my project to enable client side routing for my web app. To configure React router, navigate to the <code>main.jsx</code> file, which is the root file, and create and render a <code>BrowserRouter</code>. To create a BrowserRouter first import the <code>createBrowserRouter</code> and <code>RouterProvider</code> components from the react-router-dom package that we installed, as follows:
+ --After successfully installing the package, I can now set up and configure react-router within my project to enable client side routing for my web app. To configure React router, navigate to the <code>main.jsx</code> file, which is the root file, and create and render a <code>BrowserRouter</code>. To create a BrowserRouter first import the <code>createBrowserRouter</code>, <code>RouterProvider</code> and <code>CreateRoutesFromElements</code> components from the react-router-dom package that we installed, as follows:
  ```bash
 	// main.jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, } from 'react-router-dom';//Step 00
+import { createBrowserRouter, CreateRoutesFromElements, RouterProvider, } from 'react-router-dom';//Step 00
 import App from './App';
 
 
 ```
 --**Step 00**
 
---To render the <code>BrowserRouter</code> create an instance of the createBrowserRouter function naming it <code>router</code> which takes an array of objects as function parameter. Each object of the array typically contains two properties namely: <code>path:</code> and <code>element:</ccode>. this is as illustrated below:
+--To render the <code>BrowserRouter</code> create an instance object of the createBrowserRouter function naming it <code>router</code> and call the CreateRoutesFromElements function in which you would call the <Route></Route> component element. 
 
 ```bash
-	const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <div>Hello world!</div>,
-  },
-]);
+	const router = createBrowserRouter(  //Step 00
+	   CreateRoutesFromElements(	//Step 00
+	     <Route>     //Step 00
+
+             </Route>
+
+	)
+);
 ```
+
+
+**Step 00**
+--Inside the opening <Route> component tag, you are required to call two <code>props</code> namely: <code>path:</code> and <code>element:</code>. this is as illustrated below:
+
+```bash
+	<Route path=''	   //Step 00
+	       element={ }  //Step 00
+	>
+		
+	</Route>
+```
+
+**Step 00**
+-- We can then set the values of the props: <>path</> and <code>element</code> to a forward slash representing the root route and then a root layer component like this:
+
+```bash
+	<Route path='/'	   //Step 00
+	       element={<RootLayer/> }  //Step 00
+	>
+		
+	</Route>
+```
+Note that,  configuring the opening route JSX component tag that is <Route> with the forward slash (/) and the RootLayer component only sets the stage for proper routing to our web pages. The RootLayer component serves to provide a fixed later that gets inherited by all other pages.
 
 --**Step 00**
 
---Within React.StrictMode JSX tag of the render method of the ReactDOM component, the <code>RouterProvider</code> component which was imported together with the createBrowser component is called and nested within the RouterProvider component and given the component property <code>router</code> and value of <code>{router}</code> as follows:
+--Within React.StrictMode JSX tag of the render method of the ReactDOM component, the <code>RouterProvider</code> component which was imported together with the createBrowserRouter component is called and nested within the <code>React.StrictMode</code> component and given the component props <code>router</code> and value of <code>{router}</code> as follows:
 
 ```bash
 	ReactDOM.createRoot(document.getElementById("root")).render(
@@ -114,20 +140,22 @@ import App from './App';
  
  --**Step 00**
  
- --At this point, i have now successfully installed and imported React router into my project; the next step is to use React router to implement routing. The first step is to configure all of my routes (that is, all the pages/components to which we want to navigate).
+ --At this point, i have now successfully installed and imported React-router into my project; the next step is to implement routing. The first step is to configure all of my routes (that is, all the pages/components to which we want to navigate).
 
  **CONFIGURING THE ROOT ROUTE OF MY REACT WEB APP**
 
  **Step 00**
  
- --The Root route <Root> is configured by setting the first router object's path and elements properties to '/' and '<RootLayout/>' using the statement below:
+ --After implementing the non-navigable root route as a wrapper for our other routes, we call the  first Route self-closing component within the "Route wrapper" whose's path and element props are set to index and <Home/> using the statement below:
  ```bash
-	const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <RootLayout/>,
-  },
-]);
+	const router = createBrowserRouter(  //Step 00
+	   CreateRoutesFromElements(	//Step 00
+	     <Route path='/' element={RootLayer}>     //Step 00
+		<Route index element={<Home/>}/>
+             </Route>
+
+	)
+);
 ```
 
 
