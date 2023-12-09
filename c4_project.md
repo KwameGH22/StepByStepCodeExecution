@@ -102,7 +102,7 @@ import App from './App';
 
 
 **Step 00**
---Inside the opening <Route> component tag, you are required to call two <code>props</code> namely: <code>path:</code> and <code>element:</code>. this is as illustrated below:
+--Inside the opening <Route> component tag, you are required to call two <code>props</code> namely: <code>path:</code> and <code>element:</code>. as illustrated below:
 
 ```bash
 	<Route path=''	   //Step 00
@@ -113,7 +113,7 @@ import App from './App';
 ```
 
 **Step 00**
--- We can then set the values of the props: <>path</> and <code>element</code> to a forward slash representing the root route and then a root layer component like this:
+-- We can then set the values of the props: <>path</> and <code>element</code> to a forward slash <code>(/)</code> representing the root route and then a root layout component like this:
 
 ```bash
 	<Route path='/'	   //Step 00
@@ -122,7 +122,7 @@ import App from './App';
 		
 	</Route>
 ```
-Note that,  configuring the opening route JSX component tag that is <Route> with the forward slash (/) and the RootLayer component only sets the stage for proper routing to our web pages. The RootLayer component serves to provide a fixed later that gets inherited by all other pages.
+Note that,  configuring the opening Route JSX component tag, that is <Route> with the forward slash (/) and the RootLayer component only sets the stage for actual routing to our web pages. The RootLayer component serves to provide a fixed Layout that gets inherited by all other pages.
 
 --**Step 00**
 
@@ -130,9 +130,9 @@ Note that,  configuring the opening route JSX component tag that is <Route> with
 
 ```bash
 	ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>Step 00
-    <RouterProvider router={router} />Step 00
-  </React.StrictMode>
+	  <React.StrictMode>Step 00
+	    <RouterProvider router={router} />Step 00
+	  </React.StrictMode>
 );
 ```
 
@@ -146,12 +146,15 @@ Note that,  configuring the opening route JSX component tag that is <Route> with
 
  **Step 00**
  
- --After implementing the non-navigable root route as a wrapper for our other routes, we call the  first Route self-closing component within the "Route wrapper" whose's path and element props are set to index and <Home/> using the statement below:
+ --After implementing the non-navigable root route as a wrapper for our other routes, we call the  first Route self-closing component within the "Route wrapper" whose's path and element props are set to index and <Home/> using the statement below to create our FIRST ROUTE to our Home Page:
  ```bash
 	const router = createBrowserRouter(  //Step 00
 	   CreateRoutesFromElements(	//Step 00
 	     <Route path='/' element={RootLayer}>     //Step 00
-		<Route index element={<Home/>}/>
+		<Route index
+		       element={<Home/>}
+		       errorElement={<ErrorPage />}
+		/>
              </Route>
 
 	)
@@ -162,25 +165,21 @@ Note that,  configuring the opening route JSX component tag that is <Route> with
 
  **Step 00**
  
- --Following the creation of the root route, the Rootlayout component is the next to be created. So within the components folder setup a <code>.jsx</code> file with the identity <code>RootLayout.jsx</code>. For my application, the RootLayout component would serve as my Home or Landing page. The RootLayer page will be setup to contain four (4) child components, that is the Navbar, Hero, Content, and the Footer components as illustrated below:
+ --Following the creation of the root route, the Rootlayout component is the next to be created. So within the components folder setup a <code>.jsx</code> file with the identity <code>RootLayout.jsx</code>. For my application, the RootLayout component would be set to contain the Header component, as illustrated below:
  
   ```bash
 	//RootLayer.js file
 	import React from 'react';
-	import Navbar from './Navbar';
-	import Hero from './Hero';
-	import Content from './Content';
-	import Footer from './Footer';
+	import Header from './Header';
+	
 
 
 
 	const RootLayout = () => {
 	  return (
 	    <div>
-	        <Navbar/>
-	        <Hero/>
-	        <Content/>
-		<Footer/>
+	        <Header/>
+	       
 	    </div>
 	  )
 	}
@@ -194,19 +193,27 @@ export default RootLayout;
  
  --The ErrorPage or route is configured by introducing a second element property of the first router object called <code>errorElement</code>using the statement below:
  ```bash
-	const router = createBrowserRouter([
-  {
-    //First route
-    path: "/",
-    element: <RootLayout/>,
-    errorElement: <ErrorPage/>,  //Step 00
-  },
-]);
+	const router = createBrowserRouter(  //Step 00
+	   CreateRoutesFromElements(	//Step 00
+	     <Route path='/' element={RootLayer}>     //Step 00
+		<Route index
+		       element={<Home/>}
+		       errorElement={<ErrorPage />}    //Step 00
+		/>
+             </Route>
+
+	)
+);
 ```
 
 **Step 00**
  
- --Following the creation of the Error route, the ErrorPage component is the next to be created. So within the components folder setup a <code>.jsx</code> file with the identity <code>ErrorPage.jsx</code> and implement the code below which was copied from the react-router tutorial website to handle page not found errors. To set this ErrorPage setup howver would not be possible by first importing the <code>useRouteError</code> Hook from the react-router-dom. The useRouteError hook function is used to create an error object instance whose methods such as the <code>error.statusText</code> and <code>error.message</code> are called in the return statement of the ErrorPage component.
+ --Following the creation of the Error route, the ErrorPage component is the next to be created. 
+ 
+ **Step 00**
+ --So within the components folder set up a <code>.jsx</code> file with the identity <code>ErrorPage.jsx</code> and implement the code below which was copied from the react-router tutorial website to handle page not found errors. 
+ 
+ To set this ErrorPage setup, however, would not be possible if the <code>useRouteError</code> Hook from the react-router-dom is first not imported. The useRouteError hook function is used to create an error object instance whose methods such as the <code>error.statusText</code> and <code>error.message</code> are assessed in the return statement of the ErrorPage component.
 
 ```bash
 import { useRouteError } from "react-router-dom";  //Step 00
@@ -362,8 +369,7 @@ export default {
 **NAVBAR COMPONENT SETUP**
 --
 
-**Step 18**
-
+**Step 00**
 --Inside the Navbar.jsx file, run the react snippet "rafce" which stands for react arrow function component export" and hit the return key to generate a boilerplate code of a named (Navbar) functional component block with an export statement: 
 ```bash
 	import React from 'react';
@@ -379,8 +385,7 @@ export default {
 export default Navbar
 ```
 
-**Step 19**
-
+**Step 00**
 --Give the parent div after the return keyword of the navbar component a className attribute with a value of Navbar-container:
 ```bash
 	import React from 'react';
@@ -396,7 +401,7 @@ export default Navbar
 
 export default Navbar
 ```
-**Step 20**
+**Step 00**
 --within the parent div of ClassName 'Navbar-container' append a child div tag with className set to 'menu-items':
 ```bash
 	import React from 'react';
@@ -414,7 +419,7 @@ export default Navbar
 
 export default Navbar
 ```
-***Step 21**
+***Step 00**
 --Inside the menu-items div append an unordered list tag with a className of 'nav-items':
 ```bash
 	import React from 'react';
@@ -434,7 +439,7 @@ export default Navbar
 
 export default Navbar
 ```
-***Step 22**
+***Step 00**
 --Inside the nav-items unordered list tag append four (4) list item tags with the following classNames: logo, features, pricing and resources:
 ```bash
 import React from 'react';
@@ -459,7 +464,7 @@ const Navbar = () => {
 
 export default Navbar
 ```
-***Step 23**
+***Step 00**
 --Inside logo list-item tag append four an imag child tag with the following attributes src and alt:
 ```bash
 import React from 'react';
@@ -486,7 +491,7 @@ const Navbar = () => {
 
 export default Navbar
 ```
-**Step 24**
+**Step 00**
 --To import the logo image into our Navbar component, first establish the correct file path to the image as this is required to import the image into our Navbar module (component); the Navbar.jsx file is located in the components folder: components/Navbar.jsx. Meanwhile the logo.svg file is located in the images folder which is also located in the assets folder: assets/images/logo.svg. So to import the image file into the component we need to step out of the file and then the components folder by ../. The final import path then becomes ../assets/images/logo.svg.: 
 ```bash
 import React from 'react';
@@ -516,7 +521,7 @@ export default Navbar
 ```
 this enables us to import the image as a javascript object into our component hence setting the src attribute of our img tag to the object: {logo} and our alt attribute to 'logo-image'.
 
-**Step 25**
+**Step 00**
 --Within the menu-items div append a sibling div with className button-group and within this div append two button tags with classNames login and sign-up respectively:
 ```bash
 import React from 'react';
@@ -547,7 +552,7 @@ const Navbar = () => {
 
 export default Navbar
 ```
-**Step 26**
+**Step 00**
 --Navigate the project file structure to the component folder then into the <code>Shortlylanding.jsx</code> file and run the rafce code snippet to generate the functional component boilerplate. After the return keyword and with the parent div append <code>Navbar JSX component tag</code>. NOTE that the addition of the <code>JSX component tag</code> automatically imports the component at the top of the ShortlyLanding file:
 ```bash
 import React from 'react'
@@ -565,15 +570,15 @@ export default ShortlyLanding
 ```
 **STYLING THE NAVBAR COMPONENT**
 --
-**Step 27**
+**Step 00**
 --Inside the styles folder create a CSS Module Stylesheet with the identity navbar.module.css.
 
-**Step 28**
+**Step 00**
 --Inside the Navbar.jsx file import the CSS Module Stylesheet with the following import statement: 
 ```bash
 	import styles from '../styles/navbar.module.css'
 ```
-**Step 29**
+**Step 00**
 --To apply the styles in the module, all classNames should be referenced as javascript <code>STYLES</code> objects where the classNames are recognized as Object properties: 
 ```bash
 	 <div className={styles.navbar-container}>
