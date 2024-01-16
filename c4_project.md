@@ -113,11 +113,11 @@ import App from './App';
 ```
 
 **Step 00**
--- We can then set the values of the props: <>path</> and <code>element</code> to a forward slash <code>(/)</code> representing the root route and then a root layout component like this:
+-- We can then set the values of the props: <code>path</code> and <code>element</code> to a forward slash <code>(/)</code> representing the root route and then a root layout component like this:
 
 ```bash
 	<Route path='/'	   //Step 00
-	       element={<RootLayer/> }  //Step 00
+	       element={<RootLayout/> }  //Step 00
 	>
 		
 	</Route>
